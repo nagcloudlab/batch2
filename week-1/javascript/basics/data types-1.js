@@ -39,16 +39,16 @@ var v;
 // string
 //-------------------------------------------------
 
-var name = "Nag"
+var tnrName = "Nag"
 var company = 'cognizant'
 
 
-var dynamicString1 = "the trainer " + name + " teaching in " + company
-var dynamicString2 = `the trainer ${name} teaching in ${company}` // string interpolation ( es6 )
+var dynamicString1 = "the trainer " + tnrName + " teaching in " + company
+var dynamicString2 = `the trainer ${tnrName} teaching in ${company}` // string interpolation ( es6 )
 
 var multiLineSteing1 = `
     <div>
-        <h1>${name}</h1>
+        <h1>${tnrName}</h1>
         <h4>${company}</h4>
     </div>
 `
