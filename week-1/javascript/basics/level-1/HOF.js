@@ -114,7 +114,7 @@ function hof(f) {
 }
 
 function ola() {
-    console.log("OLA");
+    console.log("ola");
 }
 
 const olaWithBanner = hof(ola);
