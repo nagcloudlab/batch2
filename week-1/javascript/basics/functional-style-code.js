@@ -24,6 +24,7 @@ function getOdds() {
     // return filter(numbers, n => n % 2 !== 0)
     return numbers.filter(n => n % 2 !== 0)
 }
+
 // Req2 : get all even numbers into new Array
 function getEvens() {
     return filter(numbers, function (n) {

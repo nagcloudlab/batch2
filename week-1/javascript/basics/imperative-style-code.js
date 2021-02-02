@@ -13,6 +13,7 @@ function getOdds() {
     }
     return odds
 }
+
 // Req2 : get all even numbers into new Array
 function getEvens() {
     let evens = []
@@ -23,6 +24,7 @@ function getEvens() {
     }
     return evens
 }
+
 // Req3 : get all even numbers > 5 into new Array
 function getEvensAboveFive() {
     let evens = []
