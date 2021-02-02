@@ -1,3 +1,4 @@
+"use strict";
 
 //----------------------------------------------------------------
 // arrow - function  ( from ES6 )
@@ -39,13 +40,13 @@
 
 
 //----------------------------------------------------------------
-
 // why/where we need arrow function ?
+//----------------------------------------------------------------
 
-// #1 for compact higher-order-function
+// #1 for compact higher-order-function arguments
 
 
-let numbers = [1, 3, 5, 7, 9, 2, 4, 6, 8, 10]
+// let numbers = [1, 3, 5, 7, 9, 2, 4, 6, 8, 10]
 // numbers.sort()
 
 // numbers.sort(function (a, b) {
@@ -60,7 +61,168 @@ let numbers = [1, 3, 5, 7, 9, 2, 4, 6, 8, 10]
 
 // or
 
-numbers.sort((a, b) => a - b)
-console.log(numbers);
+// numbers.sort((a, b) => a - b)
+// console.log(numbers);
 
 //-------------------------------------------------------------
+
+// #2 always bound to creator ( scope's owner )
+
+// let tnr = {
+//     name: 'Nag',
+//     doTeach: function () {
+//         console.log(`${this.name} teaching javascript`); // Nag teaching javascript
+//         const askQues = (q) => {
+//             console.log(`${this.name} answering ${q}`); // 
+//         }
+//         return askQues
+//     }
+// }
+
+// const askQues = tnr.doTeach()
+// askQues("Q1")
+// askQues("Q2")
+
+//----------------------------------------------------------------
+
+// const person1 = {
+//     name: 'P1',
+//     createReguarFunction: function () {
+//         return function () {
+//             console.log(this)
+//         }
+//     },
+//     createArrowFunction: function () {
+//         return () => {
+//             console.log(this)
+//         }
+//     }
+// }
+
+// const regularFunc = person1.createReguarFunction()
+// regularFunc();
+
+// const arrowFunc = person1.createArrowFunction()
+// arrowFunc()
+
+// const person2 = { name: 'P2' }
+
+// person2.regularFunc = regularFunc
+// person2.regularFunc();
+
+// person2.arrowFunc = arrowFunc;
+// person2.arrowFunc()
+
+//----------------------------------------------------------------
+
+
+// console.log(this)
+// const regularFunc = function () {
+//     console.log(this)
+// }
+// regularFunc()
+
+// const arrowFunc = () => {
+//     console.log(this);
+// }
+
+// arrowFunc();
+// let o1 = { name: 'Nag' }
+// regularFunc.call(o1)
+// arrowFunc.call(o1) // this will not bind with o1
+
+//----------------------------------------------------------------
+
+// Quiz
+
+// let invoice = {
+//     number: 123,
+//     process: function () {
+//         console.log(this.number)
+//     }
+// }
+
+
+// global scope owned by global-object ( e.g window )
+
+// let invoice = {
+//     number: 123,
+//     process: () => {
+//         console.log(this.number)
+//     }
+// }
+
+
+// let invoice = {
+//     number: 123,
+//     process: function () {
+//         console.log(this.number + " processed partially..")
+//         return function () {
+//             console.log(this.number + " processed completly..")
+//         }
+//     }
+// }
+
+
+//----------------------------------------------------------------
+
+//imp-note : arrow function always belongs to parent-scope's owner
+
+//----------------------------------------------------------------
+
+
+// Final Quiz
+
+// function getArrow() {
+//     console.log(this) // undefined
+//     return () => {
+//         console.log(this) // undefined
+//     }
+// }
+
+
+// const arrow = getArrow();
+// arrow();
+
+//----------------------------------------------------------------
+
+// global-scope , 
+
+// function f() {
+//     // console.log(this) // {name:'foo'}
+//     const regFunc = function () {
+//         console.log(this)
+//     }
+//     const arrFunc = () => {
+//         console.log(this)
+//     }
+//     // regFunc();
+//     // arrFunc();
+//     let p = { name: 'bar' }
+//     regFunc.call(p)
+//     arrFunc.call(p)
+// }
+
+// let p = { name: 'foo' }
+
+// f.call(p)
+
+//----------------------------------------------------------------
+
+
+// UI using components i.e react.js
+
+/*
+
+
+    parent
+
+        - child-1.1
+
+            - child-2.1
+
+                - child-3.1
+
+
+
+ */
