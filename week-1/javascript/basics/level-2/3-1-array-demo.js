@@ -1,10 +1,10 @@
 
 
-// const products = [
-//     { id: 1, name: 'item-1', price: 100.00 },
-//     { id: 2, name: 'item-2', price: 300.00 },
-//     { id: 3, name: 'item-3', price: 200.00 }
-// ]
+const products = [
+    { id: 1, name: 'item-1', price: 100.00 },
+    { id: 2, name: 'item-2', price: 300.00 },
+    { id: 3, name: 'item-3', price: 200.00 }
+]
 
 
 //----------------------------------------------------------------
@@ -30,8 +30,8 @@
 // const result = products.every(function (item) {
 //     return item.price > 100
 // })
-
-const result = products.every(item => item.price > 100)
+// - or-
+// const result = products.every(item => item.price > 100)
 // console.log(result)
 
 //----------------------------------------------------------------
@@ -71,7 +71,6 @@ const result = products.every(item => item.price > 100)
 // console.log(result)
 
 //----------------------------------------------------------------
-
 
 // imperative style
 

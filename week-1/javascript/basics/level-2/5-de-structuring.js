@@ -1,14 +1,11 @@
 
-
-
-
 /**
  *
  * // de-structuring ( ES6 )
  * 
  *  read object's properties or array elements into variables with one line code
  *
- * /
+ */
 
 let person = {
     name: 'Nag',
