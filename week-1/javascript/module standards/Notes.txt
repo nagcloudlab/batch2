@@ -1,0 +1,71 @@
+
+
+
+javascript appln developement, without module standards,
+
+problems:
+
+    => global naming collisions
+
+        soln : using self-executable function with single global object
+
+    => loading dependency modules in order is manual
+
+
+    solution:
+
+        ==> using javascript module standards
+
+
+        from third-parties
+
+
+        => AMD ( Ansyc Module Definition )
+        => commonjs module standard ( cjm )
+
+
+        from ECMAScript spec ( from ES6 )
+
+        => ECMAScript module standard ( esm )
+
+
+//----------------------------------------------------------------
+
+
+
+
+
+//----------------------------------------------------------------
+// commonjs module standard
+//----------------------------------------------------------------
+
+
+    Rules :
+
+        1. every .js file is module
+        2. all variables/functions in .js file are private by default.
+        3. to abstract/export any members, use 'module.exports' object
+        4. to require/import any module , use 'require()' function
+        5. always group related modules intp package with description file 'package.json'
+
+
+        imp-note :
+
+        => Node.js runtime implemented 'cjm' as default module standard
+        => Browser not implemented  cjm
+
+
+
+
+
+NPM ( Node Package Manager )
+-----------------------------
+
+  -> cli tool
+  -> part of Node.js runtime 
+
+  why we need this tool ?
+
+    => to manage ( publish / install ) javascript packages from NPM-repository/registry ( public | private )
+
+//----------------------------------------------------------------    
