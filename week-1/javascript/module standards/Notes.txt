@@ -1,6 +1,4 @@
 
-
-
 javascript appln developement, without module standards,
 
 problems:
@@ -11,34 +9,24 @@ problems:
 
     => loading dependency modules in order is manual
 
-
     solution:
 
         ==> using javascript module standards
 
-
-        from third-parties
-
+    from third-parties
 
         => AMD ( Ansyc Module Definition )
         => commonjs module standard ( cjm )
 
 
-        from ECMAScript spec ( from ES6 )
+    from ECMAScript spec ( from ES6 )
 
         => ECMAScript module standard ( esm )
 
 
 //----------------------------------------------------------------
-
-
-
-
-
-//----------------------------------------------------------------
 // commonjs module standard
 //----------------------------------------------------------------
-
 
     Rules :
 
@@ -52,8 +40,7 @@ problems:
         imp-note :
 
         => Node.js runtime implemented 'cjm' as default module standard
-        => Browser not implemented  cjm , but via bundling tools we can run same in browser as well
-
+        => Browser not implemented cjm, but via bundling tools we can run same in browser as well
 
 
 
@@ -66,6 +53,29 @@ NPM ( Node Package Manager )
 
   why we need this tool ?
 
-    => to manage ( publish / install ) javascript packages from NPM-repository/registry ( public | private )
+    => to manage ( publish / install ) javascript packages 
+       from NPM-repository/registry ( public | private )
 
 //----------------------------------------------------------------    
+
+
+
+
+
+//----------------------------------------------------------------
+// ecmaScript module standard
+//----------------------------------------------------------------
+
+    Rules :
+
+        1. every .js file is module
+        2. all variables/functions in .js file are private by default.
+        3. to abstract/export any members, use 'export' keyword
+        4. to require/import any module , use 'import' keyword
+        5. always group related modules intp package with description file 'package.json'
+
+
+        imp-note : 
+           we can't esm modules directly in node.js & browser directly, bundle it
+
+//----------------------------------------------------------------        
