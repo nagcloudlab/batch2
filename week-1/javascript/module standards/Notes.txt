@@ -52,7 +52,7 @@ problems:
         imp-note :
 
         => Node.js runtime implemented 'cjm' as default module standard
-        => Browser not implemented  cjm
+        => Browser not implemented  cjm , but via bundling tools we can run same in browser as well
 
 
 
