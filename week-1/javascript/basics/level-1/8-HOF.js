@@ -106,23 +106,4 @@ const transferWithSec = withSec(doTransfer)
 const transferWithLogAndSec = withLog(transferWithSec)
 transferWithLogAndSec();
 
-
-//----------------------------------------------------------------
-
-
-function hof(f) {
-    return function () {
-        console.log("🌻🌻🌻🌻🌻🌻")
-        f()
-        console.log("🌻🌻🌻🌻🌻🌻")
-    }
-}
-
-function ola() {
-    console.log("ola");
-}
-
-const olaWithBanner = hof(ola);
-olaWithBanner();
-
 //----------------------------------------------------------------

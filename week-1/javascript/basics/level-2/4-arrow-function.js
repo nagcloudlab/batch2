@@ -4,7 +4,6 @@
 // arrow - function  ( from ES6 )
 //----------------------------------------------------------------
 
-
 // const getPrice = function (count) {
 //     return count * 100
 // }
@@ -14,7 +13,6 @@
 // const getPrice = (count) => {
 //     return count * 100
 // }
-
 
 // or
 
@@ -27,10 +25,7 @@
 
 // const getPrice = (count) => count * 100
 
-
-
 // const getPrice = (count, tax) => count * 100 + tax
-
 
 // const getPrice = (count, tax) => {
 //     const cost = count * 100
@@ -66,7 +61,8 @@
 
 //-------------------------------------------------------------
 
-// #2 always bound to creator ( scope's owner )
+// #2 
+
 
 // let tnr = {
 //     name: 'Nag',
@@ -143,7 +139,7 @@
 // }
 
 
-// global scope owned by global-object ( e.g window )
+// imp-note: global scope owned by global-object ( e.g window )
 
 // let invoice = {
 //     number: 123,
@@ -164,11 +160,11 @@
 // }
 
 
-//----------------------------------------------------------------
 
+//----------------------------------------------------------------
 //imp-note : arrow function always belongs to parent-scope's owner
-
 //----------------------------------------------------------------
+
 
 
 // Final Quiz
@@ -186,7 +182,6 @@
 
 //----------------------------------------------------------------
 
-// global-scope , 
 
 // function f() {
 //     // console.log(this) // {name:'foo'}
@@ -209,20 +204,3 @@
 
 //----------------------------------------------------------------
 
-
-// UI using components i.e react.js
-
-/*
-
-
-    parent
-
-        - child-1.1
-
-            - child-2.1
-
-                - child-3.1
-
-
-
- */
