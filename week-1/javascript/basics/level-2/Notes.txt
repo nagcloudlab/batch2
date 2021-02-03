@@ -1,0 +1,21 @@
+
+
+
+
+ in 2015 , ES6
+
+ New Syntax , Apis
+
+
+ - let , const keywords
+ - string interpolation i.e ``
+ - function with default & rest params
+ - class syntax
+ - arrow function
+ - de-structuring
+ - spread operator
+ - iterable objects
+ - obj-literal enhancements
+
+ - modules 
+
