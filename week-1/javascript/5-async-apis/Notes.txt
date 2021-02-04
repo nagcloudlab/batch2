@@ -1,0 +1,13 @@
+
+
+
+
+Async Apis
+----------------
+
+    - promise api ( from ES6 )
+
+        - or -
+
+    - RxJS ( Reactive eXtensions for javascript ) api    
+
