@@ -1,0 +1,11 @@
+
+
+
+
+
+
+
+  => more network/http calls from browser to server, 
+     will reduce page responsiveness
+
+  => minimize/compress response data to reduce latency  

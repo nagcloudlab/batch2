@@ -7,11 +7,12 @@
 
 //----------------------------------------------------------------
 
-// import primaryItem, { item1, item2 } from './esm-module.js';
-// console.log(primaryItem);
-// console.log(item1);
-// console.log(item2);
+import primaryItem, { item1, item2 } from './esm-module.js';
+console.log(primaryItem);
+console.log(item1);
+console.log(item2);
 
+//----------------------------------------------------------------
 
 // import * as menu from './esm-module.js'
 // console.log(menu.default);
