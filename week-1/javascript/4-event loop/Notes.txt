@@ -1,0 +1,40 @@
+
+
+
+
+//----------------------------------------------------------------
+javascript language :
+//----------------------------------------------------------------
+
+
+    ==> single-threaded process
+    ==> be default all IO operations are non-blocking / asynchronous
+
+
+//----------------------------------------------------------------
+
+
+------------------------------------------------------------------------------
+browser internal arch :
+------------------------------------------------------------------------------
+
+e.g chrome
+
+    1.  javascript-engine/runtime ( v8 )      ==>  ECMAScript spec
+
+        - single-call-stack  
+        - heap       
+
+    2. web/html apis ( e.g DOM , XHR , Timer ) ==> w3c standard spec
+
+    3. Event/Message/callback Queue
+
+    4. Event-Loop
+
+//----------------------------------------------------------------------
+
+
+
+
+
+
