@@ -9,11 +9,11 @@ const hotel = {
             // api call 
             setTimeout(() => {
 
-                // console.log("hotel resolving promise");
-                // resolve("biryani 🍗")
+                console.log("hotel resolving promise");
+                resolve("biryani 🍗")
 
-                console.log("hotel rejecting promise");
-                reject("no biryani")
+                // console.log("hotel rejecting promise");
+                // reject("no biryani")
 
             }, 5000)
         });

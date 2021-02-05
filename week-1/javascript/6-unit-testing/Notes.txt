@@ -1,0 +1,58 @@
+
+
+
+problems with manual-testing
+----------------------------------------------------------------
+
+
+==> error prone
+==> need to repeat same tests on every change in code
+
+
+solution :
+
+  => Automation Testing
+
+        - Unit Testing
+
+----------------------------------------------------------------
+
+
+TDD ( Test Driven Development )
+    
+    ==> well written test-cases will drive developement
+
+----------------------------------------------------------------   
+
+
+App : Color Convertor
+
+
+Requirements :
+
+      Req-1 : RGB ==> HEX
+      Req-2 : HEX ==> RGB
+
+
+write unit test cases
+
+  how ?
+
+    => using Unit-Testing Frameworks
+
+
+        =>  Jasmine
+        =>  Mocha
+        =>  Ava
+        =>  Jest 
+        .....
+
+
+
+----------------------------------------------------------------
+
+
+
+
+
+

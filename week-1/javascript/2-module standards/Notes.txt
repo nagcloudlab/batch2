@@ -1,18 +1,15 @@
 
 javascript appln developement, without module standards,
-
 problems:
 
     => global naming collisions
-
         soln : using self-executable function with single global object
-
     => loading dependency modules in order is manual
-
-    solution:
-
-        ==> using javascript module standards
-
+   
+solution:
+    
+    ==> using javascript module standards & loaders
+   
     from third-parties
 
         => AMD ( Ansyc Module Definition )
@@ -78,4 +75,4 @@ NPM ( Node Package Manager )
         imp-note : 
            we can't esm modules directly in node.js & browser directly, bundle it
 
-//----------------------------------------------------------------        
+//-------------------------------------------------------------------------       
