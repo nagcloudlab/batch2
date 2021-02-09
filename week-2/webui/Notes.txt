@@ -1,0 +1,54 @@
+
+
+UI    = data + style + behavior
+
+webui = html + css + javascript
+
+----------------------------------------------------------------
+
+
+why we need .js programs with HTML-page(s) in browser-envi ?
+
+
+
+    using browser provided 'apis', 
+    .js programs can bring any dynamic-ui activity to web-page 
+
+
+    browser apis are w3c recommendations
+
+
+    w3c apis
+
+    ==> DOM,Timer, XHR/Fetch
+        implemented by browser vendors natively, abstracted as javascript objects & functions
+
+    ----------------------------------------------------------------
+    using DOM API
+    ----------------------------------------------------------------
+    -> create,retreive,update,delete HTML elements
+    -> can change HTML-element's style ( css )
+    -> can change HTML-element's inner content/html 
+    -> can change HTML-element's attributes/properties
+    -> can validate all form-fields before submit to server-side-programs
+    -> can create rich/user-friendly UI components to HTML-page like calendar,autocomplete,..
+    -> can listen events ( mouse,keyboard events) on HTML elements
+
+
+    ----------------------------------------------------------------
+    using Timer Api
+    ----------------------------------------------------------------
+    -> can execute some actions on timeout or timeinterval
+
+
+    ----------------------------------------------------------------
+    using XHR / Fetch Api
+    ----------------------------------------------------------------
+    -> to communicate with server-side asynchronous way 
+
+
+
+
+
+
+
