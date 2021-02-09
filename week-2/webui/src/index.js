@@ -1,5 +1,5 @@
 import axios from 'axios';
-import 'bootstrap/dist/css/bootstrap.css'
+// import 'bootstrap/dist/css/bootstrap.css'
 
 //----------------------------------------------------------------
 // DOM API
