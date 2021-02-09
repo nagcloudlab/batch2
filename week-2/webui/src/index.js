@@ -9,19 +9,19 @@ const greetBtn = document.querySelector('.btn-dark')
 const hideBtn = document.querySelector('.btn-danger')
 const showBtn = document.querySelector('.btn-success')
 
-const card = document.querySelector('.card')
+const box = document.querySelector('.alert')
 greetBtn.addEventListener('click', e => {
-    card.innerHTML = "good morning"
+    box.innerHTML = "good morning"
 })
 hideBtn.addEventListener('click', e => {
-    card.style.display = 'none'
+    box.style.display = 'none'
 })
 showBtn.addEventListener('click', e => {
-    card.style.display = ''
+    box.style.display = ''
 })
 
 //----------------------------------------------------------------
-// DOM API + XHR(XMLHTTPRequest) API | Fetch Api
+// DOM API + XHR(XMLHTTPRequest) API or Fetch Api
 //----------------------------------------------------------------
 
 // Ref : https://www.w3schools.com/xml/xml_http.asp
@@ -93,7 +93,6 @@ const progressMessage = document.querySelector('#progress-message')
 // #2 axios ( in browser uses XHR behind scenes )
 //----------------------------------------------
 
-
 top5TodosBtn.addEventListener('click', e => {
     // HTTP request to api-server
     const url = "https://jsonplaceholder.typicode.com/todos?_limit=5"
@@ -116,4 +115,57 @@ top5TodosBtn.addEventListener('click', e => {
         .catch(err => {
             progressMessage.innerHTML = err.message
         })
+})
+
+
+
+//----------------------------------------------------------------
+// DOM API + Timer Api
+//----------------------------------------------------------------
+
+/*
+
+    setInterval()
+    setTimeout()
+
+
+*/
+
+
+const timeEle = document.querySelector('#time-now')
+setInterval(e => {
+    const date = new Date()
+    timeEle.innerHTML = date.toLocaleTimeString('en-US', { timeZone: 'America/New_york' })
+}, 1000)
+
+
+
+//----------------------------------------------------------------
+// Slide show
+//----------------------------------------------------------------
+
+const imgEle = document.querySelector('#po')
+const startBtn = document.querySelector('#start')
+const stopBtn = document.querySelector('#stop')
+
+
+stopBtn.disabled = true
+
+startBtn.addEventListener('click', e => {
+    startBtn.disabled = true
+    stopBtn.disabled = false
+    let idx = 1;
+    const interval = setInterval(() => {
+        idx++
+        const img_src = `images/${idx}.jpeg`;
+        imgEle.src = img_src
+        if (idx === 4) {
+            idx = 0
+        }
+    }, 1000)
+    stopBtn.addEventListener('click', e => {
+        clearInterval(interval)
+        stopBtn.disabled = true
+        startBtn.disabled = false
+    })
 })

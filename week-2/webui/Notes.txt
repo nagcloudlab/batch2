@@ -1,6 +1,7 @@
 
+----------------------------------------------------------------
 
-UI    = data + style + behavior
+ui    = data + style + behavior
 
 webui = html + css + javascript
 
@@ -8,7 +9,6 @@ webui = html + css + javascript
 
 
 why we need .js programs with HTML-page(s) in browser-envi ?
-
 
 
     using browser provided 'apis', 
@@ -24,7 +24,7 @@ why we need .js programs with HTML-page(s) in browser-envi ?
         implemented by browser vendors natively, abstracted as javascript objects & functions
 
     ----------------------------------------------------------------
-    using DOM API
+    using DOM API    ( DOM / page manipulation )
     ----------------------------------------------------------------
     -> create,retreive,update,delete HTML elements
     -> can change HTML-element's style ( css )
