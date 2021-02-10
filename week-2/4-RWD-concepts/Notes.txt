@@ -1,0 +1,23 @@
+
+
+
+RWD guide-lines
+----------------------------------------------------------------
+
+1. Flexible  Layouts
+2. Media Queries
+3. Mobile First approach
+4. Flexible Media-content ( images , video )
+
+
+--------------------------------
+Flexible Layouts / grids
+--------------------------------
+
+
+Responsive Web Design Formula
+(target / context) x 100 = result%
+
+e.g
+
+(340/538)*100 = 63.197026%
