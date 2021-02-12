@@ -1,5 +1,7 @@
 
-
+----------------------------------------------------------------
+Web UI design
+----------------------------------------------------------------
 
 1. HTML Elements
 
@@ -10,12 +12,13 @@
 
         Level-1:
 
-            - core-style-properties
+            - selectors
+            - basic style properties
             - layout
 
                 - box model
-                - positions
-                - floats
+                - position
+                - float
                 - flexbox
                 - grid-module
 
@@ -27,6 +30,7 @@
 
             - transitions
             - tranforms
+
 
         Level-2
 
@@ -47,4 +51,26 @@
 ------------------------------------------------------------------------------------------------        
 
 
+
+
+------------------------------------
+web-ui developer core skills
+------------------------------------
+
+    - javascript / typescript language
+    - HTML
+    - CSS
+    - browser apis
+
+    +
+
+web-ui developer advanced skills
+----------------------------------------------------------------
+
+    => third party javascript lib & frameworks
+
+        => react.js
+
+
+----------------------------------------------------------------
 
