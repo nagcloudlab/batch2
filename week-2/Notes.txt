@@ -1,0 +1,50 @@
+
+
+
+1. HTML Elements
+
+    - basic elements
+    - semantic elements
+
+2. CSS
+
+        Level-1:
+
+            - core-style-properties
+            - layout
+
+                - box model
+                - positions
+                - floats
+                - flexbox
+                - grid-module
+
+            - responsibe web design
+
+                - fluid grid system
+                - media queries    
+                - responsive images & videos
+
+            - transitions
+            - tranforms
+
+        Level-2
+
+            - css pre-processors
+
+                - LESS
+                - SASS
+                
+        Level-3 
+
+            - CSS frameworks
+
+                - bootstrap
+                - bulma 
+
+                .....
+
+------------------------------------------------------------------------------------------------        
+
+
+
