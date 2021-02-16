@@ -132,8 +132,9 @@ top5TodosBtn.addEventListener('click', e => {
 */
 
 
-const timeEle = document.querySelector('#time-now')
+
 setInterval(e => {
+    const timeEle = document.querySelector('#time-now') // DOM Query i.e search oprn on tree data-structure
     const date = new Date()
     timeEle.innerHTML = date.toLocaleTimeString('en-US', { timeZone: 'America/New_york' })
 }, 1000)

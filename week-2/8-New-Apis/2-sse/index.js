@@ -21,7 +21,6 @@ app.get("/live-scores", (req, res) => {
 })
 
 
-
 app.listen(8080, () => {
     console.log("server listening at http://localhost:8080");
 })

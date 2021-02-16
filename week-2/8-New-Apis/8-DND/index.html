@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dnd api</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        #div1 {
+            width: 350px;
+            height: 210px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+        }
+    </style>
+</head>
+
+<body class="container">
+
+    <hr />
+    Drag & Drop Api
+    <hr />
+
+
+    <div id="div1" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+
+    <hr />
+    <h1 id="title" draggable="true" ondragstart="drag(event)" class="alert alert-info">
+        cognizant
+    </h1>
+
+    <hr />
+
+    <script>
+        function drag(event) {
+            event.dataTransfer.setData("text", event.target.id)
+        }
+        function allowDrop(event) {
+            console.log(event)
+            event.preventDefault()
+        }
+        function drop(event) {
+            event.preventDefault();
+            let text = event.dataTransfer.getData("text")
+            event.target.appendChild(document.getElementById(text))
+        }
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>history api</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body class="container">
+
+    <hr />
+    Q
+    <hr />
+
+    <a onclick="handleClick(event)" href="http://www.google.com"> go to google page </a>
+
+    <hr />
+
+    <form action="search" onsubmit="handleSubmit(event)">
+        <input id="search" type="text" />
+        <button>search</button>
+    </form>
+
+
+    <hr />
+
+
+    <div id="parent" onclick="handler1(event)" class="card card-body">
+        <button onclick="handler2(event)">child</button>
+    </div>
+
+
+
+    <script type="text/javascript">
+
+
+        function handler1(event) {
+            console.log(event)
+            console.log('handler-1')
+        }
+
+        function handler2(event) {
+            event.stopPropagation();
+            console.log(event)
+            console.log('handler-2')
+        }
+
+        function handleClick(event) {
+            event.preventDefault();
+            console.log("handling click event...")
+            console.log(event)
+            const url = event.target.href;
+            console.log(url)
+            window.location = url;
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            // async HTTP call to server
+        }
+
+    </script>
+
+</body>
+
+</html>

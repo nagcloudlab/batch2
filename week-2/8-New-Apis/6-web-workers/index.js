@@ -12,9 +12,9 @@ longRunningBtn.addEventListener('click', e => {
 })
 
 
+
 const nameField = document.getElementById('name-field')
 const nameSpan = document.getElementById('name-span')
-
 nameField.addEventListener('keyup', e => {
     nameSpan.innerText = e.target.value;
 })

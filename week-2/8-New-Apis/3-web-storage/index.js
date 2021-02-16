@@ -1,11 +1,12 @@
 
 
-
+//----------------------------------------------------------------
+// localstorage
+//----------------------------------------------------------------
 // localStorage.setItem('key1', 'value-1')
 // let value=localStorage.getItem('key1');
 // localStorage.clear();
 // localStorage.removeItem('key1');
-
 
 // let obj = {
 //     str: "string",
@@ -17,10 +18,18 @@
 // obj = JSON.parse(localStorage.getItem('key1') || {})
 // console.log(obj);
 
+
+//----------------------------------------------------------------
+// sessionstorage
 //----------------------------------------------------------------
 
 // sessionStorage.setItem('auth-token', 'fcvjk23423421mmasda7d6a78s6d')
 
+
+
+
+//----------------------------------------------------------------
+// cookies
 //----------------------------------------------------------------
 
 
