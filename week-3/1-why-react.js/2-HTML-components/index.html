@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML components</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body class="container">
+    <hr />
+    <h1>HTML UI components</h1>
+    <hr />
+
+    <div id="box" class="alert alert-danger">
+        <input id="inp" type="number" onchange="handleChange(event)" />
+        <hr />
+        <span id="spanEle" class="badge bg-primary">0</span>
+    </div>
+
+
+    <script>
+
+        const inp = document.getElementById(('inp'))
+        const spanEle = document.getElementById(('spanEle'))
+
+        // let i = 0;
+        // setInterval(() => {
+        //     i++
+        //     inp.value = i // state change
+        // }, 2000)
+
+
+        function handleChange(event) {
+            spanEle.innerText = inp.value * 10
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

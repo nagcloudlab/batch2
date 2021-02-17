@@ -1,0 +1,51 @@
+
+----------------------------------------------------------------
+component based UI arch
+----------------------------------------------------------------
+
+    what is component in UI ?
+
+        ==> any UI-fragment with single-responsibility 
+    
+           ( i.e simpler & smaller )
+
+           e.g Clock , Item , SearchForm,....
+
+       advantages:
+
+        => we can make  independent & re-usable UI-fragment(s) 
+
+
+ ----------------------------------------------------------------
+  principles of components
+ ----------------------------------------------------------------
+
+    => must have single-responsibility 
+        -> to keep components as smaller & simpler
+
+    => must be loosely coupled from other  
+        -> to re-use anywhere
+
+    => can take props/attributes from parent-component
+        -> to customize based on requirement
+
+    => must not mutate given props/attributes
+        -> to keep data consistency     
+
+    => can be stateless & statefull  
+
+    => state is mutable
+        -> can mutate on event
+
+    => on state change , component must re-render  
+
+    => communication b/w components via parent
+
+        -> parent to child ==> via props
+        -> child to parent ==> via events/function calls i.e inverse data flow
+
+
+------------------------------------------------------------------
+        
+
+
