@@ -1,0 +1,37 @@
+
+
+
+Thinking in React
+--------------------------------
+
+
+Step 1: Break The UI Into A Component Hierarchy
+
+
+
+VotingBox
+    - VotingItem(s)
+    - VotingSummary
+
+
+Step 2: Build A Static Version in React
+
+
+Step 3: Identify The Minimal (but complete) Representation Of UI State
+
+        - votingitems
+        - voting count of each item
+        - voting count of all items
+
+Step 4: Identify Where Your State Should Live
+
+
+        - votingitems ==> VotingBox
+        - voting count of each item ==> VotingItem
+        - voting count of all items  ==> VotingBox
+
+
+Step 5: Add Inverse Data Flow
+
+
+
