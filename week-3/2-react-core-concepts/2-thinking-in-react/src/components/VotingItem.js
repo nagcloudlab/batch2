@@ -21,7 +21,7 @@ class VotingItem extends Component {
         let { vcount } = this.state
         return (
             <div className="card card-body">
-                <h2>{item.name}</h2>
+                <p className="fs-3">{item.name}</p>
                 <hr />
                 <div className="row">
                     <div className="col-6">

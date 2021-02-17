@@ -21,7 +21,6 @@ class VotingBox extends Component {
         if (down)
             s.down += 1
         this.setState({ summary: { ...summary, [name]: s } })
-
     }
 
     renderVotingItems() {
