@@ -13,28 +13,13 @@ class VotingBox extends Component {
     }
 
     updateSummary(record) {
-        let { id, name, up, down } = record
+        let { name, up, down } = record
         let { summary } = this.state;
-        let s = summary[name]
-        if (s) {
-            if (up) {
-                s.up += 1
-            }
-            if (down) {
-                s.down += 1
-            }
-        }
-        else {
-            s = { name }
-            if (up) {
-                s.up = 1
-                s.down = 0
-            }
-            if (down) {
-                s.down = 1
-                s.up = 0
-            }
-        }
+        let s = summary[name] || { up: 0, down: 0 }
+        if (up)
+            s.up += 1
+        if (down)
+            s.down += 1
         this.setState({ summary: { ...summary, [name]: s } })
 
     }
