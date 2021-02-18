@@ -7,6 +7,7 @@ import Box from './components/Box';
 import Veg from './components/Veg';
 import NonVeg from './components/NonVeg';
 import A from './components/A';
+import Parent from './components/Parent';
 
 class App extends Component {
   render() {
@@ -27,6 +28,9 @@ class App extends Component {
           */
         }
         {/* <A color={"red"} /> */}
+
+
+        <Parent />
 
 
 

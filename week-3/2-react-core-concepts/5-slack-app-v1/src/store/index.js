@@ -1,5 +1,4 @@
 
-
 const state = {
     channels: [
         "channel-1",

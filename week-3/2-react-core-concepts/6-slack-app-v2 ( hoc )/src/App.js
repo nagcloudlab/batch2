@@ -26,11 +26,12 @@ class App extends Component {
         <div className="row">
           <div className="col-4">
             <ChannelList
+              title="ChannelList"
               currentChannel={currentChannel}
               onSelect={channel => this.changeCurrentChannel(channel)} />
           </div>
           <div className="col-8">
-            <MessageList currentChannel={currentChannel} />
+            <MessageList title="MessageList" currentChannel={currentChannel} />
           </div>
         </div>
 

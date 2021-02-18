@@ -1,30 +1,18 @@
 import React, { Component } from 'react';
-import store from '../store';
 
+import { connect } from '../HOF/connect';
+import { withCard } from '../HOF/withCard';
 
+// Presentatlional component ( How things look )
 class ChannelList extends Component {
-    constructor() {
-        super();
-        this.state = {
-            channels: store.getState().channels
-        }
-    }
-    componentDidMount() {
-        this.unsubscribe = store.subscribe(() => {
-            const channels = store.getState().channels || []
-            this.setState({ channels })
-        })
-    }
-    componentWillUnmount() {
-        this.unsubscribe();
-    }
+
     handleClick = (e, channel) => {
         const { onSelect } = this.props;
         if (onSelect)
             onSelect(channel)
     }
     renderChannels() {
-        let { channels } = this.state;
+        let { channels } = this.props;
         let { currentChannel } = this.props;
         return channels.map((channel, idx) => {
             return (
@@ -39,14 +27,24 @@ class ChannelList extends Component {
     }
     render() {
         return (
-            <div className="card">
-                <div className="card-header">ChannelList</div>
-                <div className="card-body">
-                    {this.renderChannels()}
-                </div>
-            </div>
+            <>
+                { this.renderChannels()}
+            </>
+
         );
     }
 }
 
-export default ChannelList;
+
+
+const mapStateToProps = state => {
+    return {
+        channels: state.channels || []
+    }
+}
+
+// const ChannelListWithCard = withCard(ChannelList);
+// const ChannelListWithCardAndWithStore = connect(ChannelListWithCard, mapStateToProps)
+// export default ChannelListWithCardAndWithStore;
+
+export default connect(ChannelList, mapStateToProps)

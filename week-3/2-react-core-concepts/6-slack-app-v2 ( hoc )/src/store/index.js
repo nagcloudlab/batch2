@@ -38,6 +38,7 @@ const store = {
 
 
 
+// reducers
 
 let j = 3;
 setInterval(() => {
