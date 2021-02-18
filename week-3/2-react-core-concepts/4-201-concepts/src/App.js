@@ -12,6 +12,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
+
         <hr />
         <h1>201 react concepts</h1>
         <hr />
@@ -25,7 +26,9 @@ class App extends Component {
           </Box> 
           */
         }
-        <A color={"red"} />
+        {/* <A color={"red"} /> */}
+
+
 
       </div>
     );
