@@ -1,6 +1,6 @@
 
 import 'bootstrap/dist/css/bootstrap.css';
-import UseReducer from './components/use-reducer';
+import UseEffect from './components/use-effect';
 
 function App() {
   return (
@@ -19,7 +19,8 @@ function App() {
       </ol>
       <hr />
 
-      <UseReducer />
+
+      <UseEffect />
 
     </div>
   );
