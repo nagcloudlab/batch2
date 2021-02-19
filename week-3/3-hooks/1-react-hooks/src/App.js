@@ -1,6 +1,6 @@
 
 import 'bootstrap/dist/css/bootstrap.css';
-import UseEffect from './components/use-effect';
+import UseCustomHook from './use-custom-hook'
 
 function App() {
   return (
@@ -19,8 +19,7 @@ function App() {
       </ol>
       <hr />
 
-
-      <UseEffect />
+      <UseCustomHook />
 
     </div>
   );
