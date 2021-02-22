@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import Item from '../item'
 
-function ItemList(props) {
-
+function ItemList({ onBuy, cart }) {
 
     const [items, setItems] = useState([
         {
@@ -26,9 +25,11 @@ function ItemList(props) {
 
     const renderItems = () => {
         return items.map(itemData => {
+            let cartLine = cart[itemData.id] || {}
+            let cartItemQty = cartLine.qty || 0
             return (
                 <div key={itemData.id} className="list-group-item">
-                    <Item value={itemData} />
+                    <Item value={itemData} cartItemQty={cartItemQty} onBuy={onBuy} />
                 </div>
             )
         })
