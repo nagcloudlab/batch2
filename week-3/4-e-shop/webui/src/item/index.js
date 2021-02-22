@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import classNames from 'classnames';
+import Review from '../review';
 
 
 function Item({ value: item }) {
@@ -21,6 +22,12 @@ function Item({ value: item }) {
         setTab(tabIndex)
     }
 
+    const renderReviews = () => {
+        return reviews.map((reviewData, idx) => {
+            return <Review key={idx} value={reviewData} />
+        })
+    }
+
     const renderTabPanel = () => {
         switch (tab) {
             case 1: {
@@ -30,7 +37,7 @@ function Item({ value: item }) {
                 return (<div>Not Yet</div>)
             }
             case 3: {
-                return (<div>None Yet</div>)
+                return (<div>{renderReviews()}</div>)
             }
             default: return null;
         }
@@ -43,17 +50,17 @@ function Item({ value: item }) {
                 </div>
                 <div className="col-8">
                     <div>{item.name}</div>
-                    <div>{item.price}</div>
+                    <div>&#8377;{item.price}</div>
                     {renderCanBuyBtn(item.can_buy)}
                     <ul className="nav nav-tabs">
                         <li className="nav-item">
-                            <a onClick={e => handleTabChange(1)} className={classNames({ 'nav-link': true, 'active': tab === 1 })} href="#">description</a>
+                            <a onClick={e => handleTabChange(1)} className={classNames({ 'nav-link': true, 'active': tab === 1 })} href="#">Description</a>
                         </li>
                         <li className="nav-item">
-                            <a onClick={e => handleTabChange(2)} className={classNames({ 'nav-link': true, 'active': tab === 2 })} href="#">specification</a>
+                            <a onClick={e => handleTabChange(2)} className={classNames({ 'nav-link': true, 'active': tab === 2 })} href="#">Specification</a>
                         </li>
                         <li className="nav-item">
-                            <a onClick={e => handleTabChange(3)} className={classNames({ 'nav-link': true, 'active': tab === 3 })} href="#">reviews</a>
+                            <a onClick={e => handleTabChange(3)} className={classNames({ 'nav-link': true, 'active': tab === 3 })} href="#">Reviews</a>
                         </li>
                     </ul>
                     {renderTabPanel()}
