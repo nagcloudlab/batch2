@@ -1,26 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Item from '../item'
+import axios from 'axios';
+
 
 function ItemList({ onBuy, cart }) {
 
-    const [items, setItems] = useState([
-        {
-            id: 1,
-            name: 'Laptop',
-            price: 145000,
-            description: 'New mac pro',
-            can_buy: true,
-            image_path: 'images/Laptop.png',
-        },
-        {
-            id: 2,
-            name: 'Mobile',
-            price: 39000,
-            description: 'New pro',
-            can_buy: true,
-            image_path: 'images/Mobile.png',
+    const [items, setItems] = useState([])
+
+    const fetchItems = async () => {
+        try {
+            const apiUrl = "http://localhost:8080/api/items"
+            const response = await axios.get(apiUrl)
+            const items = await response.data;
+            setItems(items)
+        } catch (e) {
+            console.log();
         }
-    ])
+    }
+
+    useEffect(() => {
+        fetchItems();
+    }, [])
 
 
     const renderItems = () => {

@@ -1,16 +1,27 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import classNames from 'classnames';
 import Review from '../review';
 
+import axios from 'axios';
 
 function Item({ value: item, onBuy, cartItemQty }) {
 
     const [tab, setTab] = useState(1)
-    const [reviews, setReviews] = useState([
-        { stars: 5, body: 'sample-review-1', author: 'who1@mail.com' },
-        { stars: 1, body: 'sample-review-2', author: 'who2@mail.com' }
-    ])
+    const [reviews, setReviews] = useState([])
+
+    const fetchReviews = async () => {
+        const apiUrl = `http://localhost:8080/api/items/${item.id}/reviews`
+        const response = await axios.get(apiUrl)
+        const reviews = await response.data;
+        setReviews(reviews)
+    }
+
+    useEffect(() => {
+        if (tab === 3) {
+            fetchReviews()
+        }
+    }, [tab])
+
     const handleBuyBtnClick = () => {
         onBuy(item)
     }
@@ -26,6 +37,8 @@ function Item({ value: item, onBuy, cartItemQty }) {
     }
 
     const renderReviews = () => {
+        if (reviews.length === 0)
+            return (<div>No Reviews</div>)
         return reviews.map((reviewData, idx) => {
             return <Review key={idx} value={reviewData} />
         })
