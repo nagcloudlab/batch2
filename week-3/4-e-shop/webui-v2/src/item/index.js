@@ -2,28 +2,29 @@ import React, { useState, useEffect } from 'react';
 import classNames from 'classnames';
 import Review from '../review';
 
-import axios from 'axios';
 
-function Item({ value: item, onBuy, cartItemQty }) {
+import { useDispatch, useSelector } from 'react-redux'
+import { getReviews } from '../actions/items'
+import { buy } from '../actions/cart'
+
+function Item({ value: item }) {
 
     const [tab, setTab] = useState(1)
-    const [reviews, setReviews] = useState([])
+    const reviews = useSelector(state => state.reviews[item.id] || [])
+    const cartLine = useSelector(state => state.cart[item.id] || {})
+    const cartItemQty = cartLine.qty || 0;
+    const dispatch = useDispatch()
 
-    const fetchReviews = async () => {
-        const apiUrl = `http://localhost:8080/api/items/${item.id}/reviews`
-        const response = await axios.get(apiUrl)
-        const reviews = await response.data;
-        setReviews(reviews)
-    }
+
 
     useEffect(() => {
         if (tab === 3) {
-            fetchReviews()
+            dispatch(getReviews(item.id))
         }
     }, [tab])
 
     const handleBuyBtnClick = () => {
-        onBuy(item)
+        dispatch(buy(item))
     }
 
     const renderCanBuyBtn = canBuy => {

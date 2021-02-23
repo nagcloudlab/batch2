@@ -1,35 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import Item from '../item'
-import axios from 'axios';
 
+import { getItems } from '../actions/items'
 
-function ItemList({ onBuy, cart }) {
+import { useDispatch, useSelector } from 'react-redux'
 
-    const [items, setItems] = useState([])
+function ItemList() {
 
-    const fetchItems = async () => {
-        try {
-            const apiUrl = "http://localhost:8080/api/items"
-            const response = await axios.get(apiUrl)
-            const items = await response.data;
-            setItems(items)
-        } catch (e) {
-            console.log();
-        }
-    }
+    const items = useSelector(state => state.items || [])
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        fetchItems();
+        // via redux middleware action will be dispatched
+        dispatch(getItems())
     }, [])
 
 
     const renderItems = () => {
         return items.map(itemData => {
-            let cartLine = cart[itemData.id] || {}
-            let cartItemQty = cartLine.qty || 0
             return (
                 <div key={itemData.id} className="list-group-item">
-                    <Item value={itemData} cartItemQty={cartItemQty} onBuy={onBuy} />
+                    <Item value={itemData} />
                 </div>
             )
         })

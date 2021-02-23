@@ -1,6 +1,19 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux'
+import { qtyChange, deleteCartLine } from '../actions/cart'
 
-function CartView({ cart }) {
+function CartView() {
+
+    const cart = useSelector(state => state.cart)
+    const dispatch = useDispatch()
+
+    const handleQty = (value, itemId) => {
+        dispatch(qtyChange(itemId, value))
+    }
+    const handleDelete = itemId => {
+        dispatch(deleteCartLine(itemId))
+    }
+
     const renderCartLines = () => {
         const keys = Object.keys(cart)
         return keys.map((key, idx) => {
@@ -11,8 +24,13 @@ function CartView({ cart }) {
                     <td>{idx + 1}</td>
                     <td>{item.name}</td>
                     <td>&#8377;{item.price}</td>
-                    <td>{qty}</td>
+                    <td>
+                        <i onClick={e => handleQty(-1, item.id)} style={{ cursor: 'pointer' }} className="fa fa-minus mr-3"></i>
+                        {qty}
+                        <i onClick={e => handleQty(1, item.id)} style={{ cursor: 'pointer' }} className="fa fa-plus ml-3"></i>
+                    </td>
                     <td>&#8377;{item.price * qty}</td>
+                    <td><i onClick={e => handleDelete(item.id)} style={{ cursor: 'pointer' }} className="fa fa-trash"></i></td>
                 </tr>
             )
         })
