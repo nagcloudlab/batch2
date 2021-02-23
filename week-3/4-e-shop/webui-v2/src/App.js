@@ -6,6 +6,7 @@ import ItemList from './item-list';
 import CartView from './cart-view';
 import Home from './home';
 import NotFound from './not-found';
+import CartBadge from './cart-badge';
 
 import {
   BrowserRouter as Router,
@@ -14,17 +15,12 @@ import {
   Link
 } from "react-router-dom";
 
-import { useSelector } from 'react-redux'
-
 function App() {
-
-  const cart = useSelector(state => state.cart)
-
   return (
     <div className="container">
       <Navbar title="shop-IT" />
       <hr />
-      <span>{Object.entries(cart).length} item(s) in cart</span>
+      <CartBadge />
       <hr />
       <Router>
         <div>
