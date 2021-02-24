@@ -1,0 +1,94 @@
+
+
+
+react native core ui components
+
+-------------------------------
+View
+-------------------------------
+
+Views are the most basic building block of React Native apps. 
+The View is an abstraction layer on top of the target platform's native equivalent:
+
+    For iOS - UIView
+    For Android - android.view
+    For Web - <div>
+
+-------------------------------
+Layout    
+-------------------------------
+
+
+Components specify the layout of their children using the 'flexbox' algorithm.
+
+
+
+-------------------------------
+Text    
+-------------------------------
+
+Text is used to render text. Unlike on the web, text must be wrapped in a <Text> component.
+
+
+-------------------------------
+Image    
+-------------------------------
+
+- Imported images
+- Images from the web
+
+
+
+-------------------------------
+Button    
+-------------------------------
+
+We use the Button component when we want to show a button using the default/standard style
+for each native platform.
+
+
+-------------------------------
+Touchables
+-------------------------------
+
+In React Native, most "buttons" are actually implemented using Touchable components.
+
+Like Button, these components support an onPress prop. However, unlike Button, 
+these components support custom styling - essentially a T
+
+
+- TouchableOpacity 
+
+    This component fades out when pressed, 
+    and fades back in when released. We can style it however we want, 
+    just like a View.
+
+- TouchableHighlight.
+
+    This component changes color when pressed, and changes back in when released.
+
+-------------------------------
+ScrollView
+-------------------------------
+
+ScrollViews are used for scrollable content. 
+
+They're well suited for scrolling small quantities of content (less than a full screen). 
+They can scroll horizontally or vertically. 
+
+For large quantities of items, consider using a 'FlatList' for better performance.
+
+-------------------------------
+Lists
+-------------------------------
+
+Lists are like ScrollViews, but optimized to recycle elements and reduce re-renders 
+for better performance. 
+As a result, the APIs are a little more complex than ScrollView.
+
+    - FlatList
+    - SectionList
+
+        SectionLists are like FlatLists, 
+        but they can have section headers to separate groups of rows.
+
