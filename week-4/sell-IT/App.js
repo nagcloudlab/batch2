@@ -1,28 +1,20 @@
-import React from 'react';
-import {
-  View,
-  StyleSheet,
-  Text
-} from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import RegisterScreen from './app/screens/RegisterScreen';
+
+
 
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Exercise</Text>
-    </View >
+    <RegisterScreen />
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
-
-  },
-  text: {
-    fontSize: 30
+    justifyContent: 'center'
   }
-})
-
+});
