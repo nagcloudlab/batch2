@@ -1,20 +1,14 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import RegisterScreen from './app/screens/RegisterScreen';
+import React from 'react';
 
-
+import { NavigationContainer } from "@react-navigation/native";
+import AuthNavigator from "./app/navigation/AuthNavigator";
+import AppNavigator from "./app/navigation/AppNavigator";
 
 
 export default function App() {
   return (
-    <RegisterScreen />
+    <NavigationContainer>
+      <AppNavigator />
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-});

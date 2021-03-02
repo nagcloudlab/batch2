@@ -1,40 +1,29 @@
 
-
-----------------------------------------------------------------
-
  1. Layout
-
     - WelcomeScreen
     - ImageViewScreen
 
-----------------------------------------------------------------    
-
 2. Styles
-
     - AppButton
     - Card
     - ListingDetailsScreen
-
-
-----------------------------------------------------------------    
+    - Icon
 
 3. Lists
-
-
     - MessagesScreen
     - AccountScreen
     - ListingsScreen 
 
-----------------------------------------------------------------    
-
 4. InputComponent
-
     - AppTextInput
-
-
-----------------------------------------------------------------    
+    - AppPicker
 
 5. Forms
+    - LoginScreen
+    - RegisterScreen
+    - ListingEditScreen
+
+    
 
 
 
