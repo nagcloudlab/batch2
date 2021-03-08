@@ -26,7 +26,7 @@ httpServer.on('request', (req, res) => {
         // return;
 
 
-        // non blocking IO with streams
+        // non blocking IO with streams without backpressure strategy
         const readStream = fs.createReadStream('/Users/nag/Downloads/temp_5GB_file');
 
         // readStream.on('data', (chunk) => {
@@ -36,7 +36,9 @@ httpServer.on('request', (req, res) => {
         //     res.end()
         // })
 
+        // non blocking IO with streams with backpressure strategy
         readStream.pipe(res)
+
         return;
 
 
