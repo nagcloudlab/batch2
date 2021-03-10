@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+</head>
+
+<body class="container">
+    <hr />
+    <h1>Express</h1>
+    <hr />
+
+
+    <ul class="list-group">
+        {{#each todos}}
+        <li class="list-group-item">{{this.title}}</li>
+        {{/each}}
+    </ul>
+
+</body>
+
+</html>
