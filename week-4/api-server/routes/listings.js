@@ -5,6 +5,7 @@ const multer = require('multer');
 const path = require('path');
 
 
+
 // Set The Storage Engine
 const storage = multer.diskStorage({
     destination: './public/images/',
@@ -12,6 +13,8 @@ const storage = multer.diskStorage({
         cb(null, file.originalname + (+new Date()) + "." + file.mimetype.split("/")[1]);
     }
 });
+
+
 
 // Init Upload
 const upload = multer({
@@ -21,7 +24,6 @@ const upload = multer({
         checkFileType(file, cb);
     }
 }).array('images')
-
 
 
 // Check File Type
@@ -39,13 +41,8 @@ function checkFileType(file, cb) {
     }
 }
 
-
-
-
 router
     .get('/', (req, res, next) => {
-
-        // fetch existing listings from mongodb
         Listing
             .find({})
             .exec((err, documents) => {
@@ -55,15 +52,16 @@ router
                         id: doc._id,
                         title: doc.title,
                         price: doc.price,
-                        image: `http://192.168.43.28:3000/images/${doc.image}`
+                        image: `http://192.168.1.101:3000/images/${doc.image}`
                     }
                 })
+                // setTimeout(() => {
                 res.status(200).json(docs)
+                // }, 5000)
             })
 
     })
     .post('/', (req, res, next) => {
-
         upload(req, res, (err) => {
             if (err) {
                 console.log(err)
@@ -76,20 +74,16 @@ router
                         msg: 'Error: No File Selected!'
                     });
                 } else {
-                    // res.render('index', {
-                    //     msg: 'File Uploaded!',
-                    //     file: `${req.file.filename}`
-                    // });
-
                     const body = req.body;
                     console.log(body)
                     const listing = new Listing({ ...body, image: req.files[0].filename })
                     listing.save((err, doc) => {
                         if (err)
                             throw err;
-                        res.status(201).json(doc)
+                        setTimeout(() => {
+                            res.status(201).json(doc)
+                        }, 5000)
                     })
-
                 }
             }
         });
