@@ -22,10 +22,15 @@ function ProductForm(props) {
         loadProduct()
     }, [])
 
-    const addNewProduct = async formData => {
-        const apiUri = "http://localhost:8080/api/products"
-        const result = await axios.post(apiUri, formData)
-        history.push("view-all")
+    const addNewOrUpdateProduct = async formData => {
+        if (!match) {
+            const apiUri = "http://localhost:8080/api/products"
+            const result = await axios.post(apiUri, formData)
+        } else {
+            const apiUri = "http://localhost:8080/api/products/" + match.params.productId;
+            const result = await axios.patch(apiUri, formData)
+        }
+        history.push("/view-all")
     }
 
     return (
@@ -33,8 +38,9 @@ function ProductForm(props) {
             <div className="row">
                 <div className="col-6">
                     <Formik
-                        initialValues={{ name: product.name }}
-                        onSubmit={values => addNewProduct(values)}
+                        enableReinitialize
+                        initialValues={{ name: product.name, price: product.price, description: product.description }}
+                        onSubmit={values => addNewOrUpdateProduct(values)}
                     >
                         {({ values, handleChange, handleSubmit }) => (
                             <form onSubmit={handleSubmit}>
