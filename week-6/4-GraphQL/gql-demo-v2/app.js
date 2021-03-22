@@ -2,7 +2,6 @@ const express = require("express")
 const { graphqlHTTP } = require("express-graphql")
 const graphqlSchema = require("./graphql/schema")
 const graphqlResolvers = require("./graphql/resolvers")
-const mongoose = require("mongoose")
 
 const app = express()
 
@@ -16,7 +15,7 @@ app.use(
 )
 
 
-const uri = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.socov.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`
+const uri = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@/${process.env.MONGO_DB}?retryWrites=true&w=majority`
 const options = { useNewUrlParser: true, useUnifiedTopology: true }
 mongoose
     .connect(uri, options)
@@ -25,4 +24,4 @@ mongoose
         throw error
     })
 
-// app.listen(3000, () => console.log("Server is running on localhost:3000"))
+app.listen(3000, () => console.log("Server is running on localhost:3000"))
