@@ -23,7 +23,6 @@ const handleEvent = (type, data) => {
         const post = posts[postId];
         post.comments.push({ id, content, status });
     }
-
     if (type === 'CommentUpdated') {
         const { id, content, postId, status } = data;
 
@@ -34,8 +33,6 @@ const handleEvent = (type, data) => {
         comment.status = status;
         comment.content = content;
     }
-
-
 }
 
 app.post('/events', (req, res) => {
@@ -46,4 +43,12 @@ app.post('/events', (req, res) => {
 
 app.listen(4002, async () => {
     console.log('Listening on 4002');
+
+    const res = await axios.get('http://localhost:4005/events');
+
+    for (let event of res.data) {
+        console.log('Processing event:', event.type);
+
+        handleEvent(event.type, event.data);
+    }
 });
