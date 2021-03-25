@@ -1,18 +1,18 @@
-import './App.css';
-import PostForm from './components/PostForm'
-import PostList from './components/PostList'
+import React from 'react';
+import PostCreate from './PostCreate';
+import PostList from './PostList';
 
-function App() {
+export default () => {
   return (
     <div className="container">
       <hr />
-      <h1>blog - microservices</h1>
+      <h1>blog : Microservices</h1>
       <hr />
-      <PostForm />
+      {/* <h2>Create Post</h2> */}
+      <PostCreate />
       <hr />
+      {/* <h2>Posts</h2> */}
       <PostList />
     </div>
   );
-}
-
-export default App;
+};

@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-app-depl
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: node-app
+  template:
+    metadata:
+      labels:
+        app: node-app
+    spec:
+      containers:
+        - name: node-app
+          image: nagabhushanamn/node-app:latest
+          imagePullPolicy: Never
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-app-svc
+spec:
+  type: NodePort
+  selector:
+    app: node-app
+  ports:
+    - name: node-app
+      protocol: TCP
+      port: 3000
+      targetPort: 3000
