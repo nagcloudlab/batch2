@@ -18,7 +18,7 @@ apiClient.addAsyncRequestTransform(async (request) => {
 
 const get = apiClient.get;
 
-// proxy
+// proxy / monkey patching
 apiClient.get = async (url, params, axiosConfig) => {
 
     const response = await get(url, params, axiosConfig);
