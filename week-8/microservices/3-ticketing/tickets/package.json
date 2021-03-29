@@ -10,10 +10,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/aws-sdk": "^2.7.0",
+    "@types/config": "0.0.38",
     "@types/express": "^4.17.3",
     "@types/jsonwebtoken": "^8.3.8",
+    "@types/multer-s3": "^2.7.9",
+    "aws-sdk": "^2.874.0",
+    "config": "^3.3.6",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.2",
+    "multer-s3": "^2.9.0",
     "ts-node-dev": "^1.0.0-pre.44",
     "typescript": "^3.8.3"
   }
